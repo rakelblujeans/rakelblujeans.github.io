@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "webpack-serve ./webpack.config.js",
     "build": "webpack",
-    "test": "eslint .",
-    "deploy": "gh-pages -d build"
+    "test": "eslint ."
   },
   "repository": {
     "type": "git",

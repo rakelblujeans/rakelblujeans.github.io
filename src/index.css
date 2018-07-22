@@ -2,6 +2,7 @@
 
 :root {
   --longAnimationDelay: 1s;
+  --portfolioAnimationDuration: 700ms;
   --fontColor: #fff;
 }
 
@@ -253,16 +254,59 @@ body:not(.is-preload) .aboutLink-img {
 }
 
 .section-gridCell {
-  width: 300px;
   display: flex;
+  position: relative;
   flex-direction: column;
+  width: 300px;
+  overflow: hidden;
 }
 
 .section-gridCellImg {
   width: 100%;
   object-fit: contain;
+
+  transform: translateZ(0);
+  transition: transform var(--portfolioAnimationDuration) ease;
+}
+
+.section-gridCell:hover .section-gridCellImg {
+  transform: scale(1.2) ;
+}
+
+.is-hoverUnsupported {
+  display: block;
+}
+
+/* TODO: Why are media queries unsupported in my app? */
+@media (hover: hover) {
+  .is-hoverUnsupported {
+    display: none;
+  }
 }
 
 .section-gridCellLabel {
-  margin-top: auto;
+  color: #000;
+}
+
+.section-gridCellOverlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  text-align: center;
+
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: var(--portfolioAnimationDuration);
+  transform: translateZ(0); /* TODO: include elsewhere to optimize animations */
+}
+
+.section-gridCell:hover .section-gridCellOverlay {
+  opacity: 1;
 }
