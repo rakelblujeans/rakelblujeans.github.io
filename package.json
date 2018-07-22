@@ -2,15 +2,18 @@
   "name": "new-personal-site",
   "version": "1.0.0",
   "description": "Raquels website",
+  "homepage": "https://github.com/rakelblujeans/rakelblujeans.github.io",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-serve ./webpack.config.js",
     "build": "webpack",
-    "test": "eslint ."
+    "test": "eslint .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
-    "url": "my-git-thing"
+    "url": "https://github.com/rakelblujeans/rakelblujeans.github.io"
   },
   "keywords": [
     "raquel bujans"

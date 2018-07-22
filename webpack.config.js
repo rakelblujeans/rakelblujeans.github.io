@@ -33,7 +33,6 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [
-    // new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({template: './index.html'})
   ],
 
