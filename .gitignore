@@ -1,2 +1,4 @@
 .DS_Store
 *.bak
+/dist
+/node_modules

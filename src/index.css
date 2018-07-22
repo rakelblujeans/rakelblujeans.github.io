@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
+
+:root {
+  --longAnimationDelay: 1s;
+  --fontColor: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #2e3842;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 15pt;
+  font-weight: 400;
+  line-height: 1.65em;
+  color: var(--fontColor);
+}
+
+body.is-preload *,
+body.is-preload *:before,
+body.is-preload *:after {
+  animation: none !important;
+  transition: none !important;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 75%);
+  text-align: right;
+  z-index: 100;
+}
+
+.nav-item {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+body.is-preload .banner-title {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+body.is-preload .banner-title:before,
+body.is-preload .banner-title:after {
+  width: 0;
+}
+
+body.is-preload .banner:after {
+  opacity: 1;
+}
+
+body.is-preload .backgroundContainer {
+  opacity: 0;
+}
+
+.backgroundContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0.01)), url('../images/brooklynBridge-sm-c.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -1;
+
+  transition: opacity 0.5s ease;
+  transition-delay: var(--longAnimationDelay);
+  opacity: 1;
+}
+
+.backgroundContainer:before {
+  background: rgba(0, 0, 0, 0);
+  content: '';
+  display: block;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navigation,
+.banner {
+  letter-spacing: 0.075em;
+}
+
+.banner-title {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0.35em 1em;
+  font-size: 1.75em;
+  text-transform: uppercase;
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 1;
+}
+
+.banner-title:before,
+.banner-title:after {
+  position: absolute;
+  display: block;
+  transition: width 0.85s ease;
+  transition-delay: 0.25s;
+  background: #fff;
+  content: '';
+  height: 2px;
+  width: 100%;
+}
+
+.banner-title:before {
+  top: 0;
+  left: 0;
+}
+
+.banner-title:after {
+  bottom: 0;
+  right: 0;
+}
+
+.banner-byline {
+  padding: 0;
+}
+
+.preloadProtected {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  transition-delay: var(--longAnimationDelay);
+}
+
+body.is-preload .preloadProtected {
+  opacity: 0;
+}
+
+.section {
+  position: relative;
+  display: flex;
+  /*margin-top: 100vh;*/
+  padding-top: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--fontColor);
+}
+
+.section--banner {
+  padding-top: 80vh;
+}
+
+.section-inner {
+  /*width: 75%;
+  max-width: 600px;*/
+  background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 45%, rgba(0,0,0,0.4) 55%, rgba(0,0,0,0) 100%);
+}
+
+/* Taken from animate.css */
+@keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+body:not(.is-preload) .aboutLink-img {
+  animation-name: bounceInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: var(--longAnimationDelay);
+}
+
+.section--about .section-inner {
+  width: 75%;
+  max-width: 600px;
+}
+
+.img-socialIcon {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  height: 21px;
+}
+
+.contact-info {
+  margin-top: 30px;
+}
+
+.section--portfolio {
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 25%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,0) 100%);
+}
+
+/* TODO: Why don't media queries work? */
+@media (max-width: 600px) {
+  .section--portfolio {
+    padding-bottom: 50vh;
+  }
+}
+
+.section--portfolio .section-inner {
+  padding-bottom: 30px;
+  background-image: none;
+  max-width: 930px;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+
+.section-gridCell {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-gridCellImg {
+  width: 100%;
+  object-fit: contain;
+}
+
+.section-gridCellLabel {
+  margin-top: auto;
+}

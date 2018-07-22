@@ -1,0 +1,38 @@
+{
+  "name": "new-personal-site",
+  "version": "1.0.0",
+  "description": "Raquels website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-serve ./webpack.config.js",
+    "build": "webpack",
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "my-git-thing"
+  },
+  "keywords": [
+    "raquel bujans"
+  ],
+  "author": "Raquel Bujans <raquel.bujans@gmail.com>",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "autoprefixer": "^9.0.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.2.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "postcss-loader": "^2.1.6",
+    "smoothscroll-polyfill": "^0.4.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-serve": "^2.0.2"
+  }
+}
