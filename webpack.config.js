@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development', // argv.mode === 'development' ? 'development' : 'production',
+  mode: 'production',
   module: {
     rules: [
       {
