@@ -28,8 +28,8 @@ module.exports = {
     ]
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    path: path.resolve(__dirname, 'build'),
+    publicPath: '/rakelblujeans/',
     filename: 'bundle.js',
   },
   plugins: [
