@@ -318,7 +318,9 @@ body:not(.is-preload) .aboutLink-img {
 }
 
 .is-hoverUnsupported {
-  display: block;
+  /* TODO: media queries not working?! */
+  /*display: block;*/
+  display: none;
 }
 
 @media (hover: hover) {
