@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'production',
+  mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
   module: {
     rules: [
       {

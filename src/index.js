@@ -15,23 +15,23 @@ window.onload = function() {
   const aboutLinks = document.getElementsByClassName('js-aboutLink');
   for (const link of aboutLinks) {
     link.addEventListener('click', () => {
-      scrollIntoView('.section--about');
+      scrollIntoView('.section--about .section-inner', 'end');
     });
   }
 
   const portfolioLinks = document.getElementsByClassName('js-portfolioLink');
   for (const link of portfolioLinks) {
     link.addEventListener('click', () => {
-      scrollIntoView('.section--portfolio');
+      scrollIntoView('.section--portfolio .section-inner');
     });
   }
 };
 
-function scrollIntoView(classname) {
+function scrollIntoView(classname, blockPosition = 'start') {
   const element = document.querySelector(classname);
   element.scrollIntoView({
     behavior: 'smooth',
-    block: 'end',
+    block: blockPosition,
     inline: 'nearest',
   });
 }

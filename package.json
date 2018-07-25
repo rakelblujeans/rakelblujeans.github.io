@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-serve ./webpack.config.js",
-    "build": "webpack",
+    "prepublishOnly": "webpack",
     "test": "eslint ."
   },
   "repository": {
@@ -30,7 +30,12 @@
     "file-loader": "^1.1.11",
     "gh-pages": "^1.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "postcss-calc": "^6.0.1",
+    "postcss-color-function": "^4.0.1",
+    "postcss-custom-media": "^6.0.0",
     "postcss-loader": "^2.1.6",
+    "postcss-media-variables": "^2.0.1",
+    "postcss-nested": "^3.0.0",
     "smoothscroll-polyfill": "^0.4.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.16.1",
